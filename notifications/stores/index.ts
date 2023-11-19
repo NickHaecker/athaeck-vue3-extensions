@@ -9,11 +9,16 @@ export const useNotificationStore = defineStore({
   }),
   actions: {
     Init(): void {
-      bus.on("SPAWN_NOTIFICATION",this._OnSpawnNotification)
+      bus.on("TAKE_MESSAGE",this._OnTakeMesage)
     },
-    _OnSpawnNotification(body:any){
+    _OnTakeMesage(body:any){
       console.log(body)
-      this.SpawnNotification(body)
+      const notification:NotificationItem = {
+        type: "info",
+        message: body,
+        action1: {label:""}
+      }
+      this.SpawnNotification(notification)
     },
     _OnAddNotificatation(notification: NotificationItem): void {
       this.notifications.push(notification)
