@@ -9,7 +9,7 @@
                 <div class="actions">
                     <div class="py10 px20 pointer weight-400 action-border notification-action uppercase"
                         :class="`border-${notification.type}`" id="notificationAction1" data-testid="notificationAction1"
-                        @click="ExecAction(notification.action1, index)">
+                        @click="ExecAction(notification.action1, index)" v-if="notification.action1">
                         {{ notification.action1.label }}
                     </div>
                     <div class="py10 px20 pointer weight-400 notification-action uppercase" id="notificationAction2"

@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import type { NotificationItem } from '../types'
+import bus from '@/hooks/index'
 
 export const useNotificationStore = defineStore({
   id: 'notification',
@@ -7,6 +8,13 @@ export const useNotificationStore = defineStore({
     notifications: [] as NotificationItem[]
   }),
   actions: {
+    Init(): void {
+      bus.on("SPAWN_NOTIFICATION",this._OnSpawnNotification)
+    },
+    _OnSpawnNotification(body:any){
+      console.log(body)
+      this.SpawnNotification(body)
+    },
     _OnAddNotificatation(notification: NotificationItem): void {
       this.notifications.push(notification)
     },

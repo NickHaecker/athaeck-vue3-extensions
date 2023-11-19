@@ -4,6 +4,8 @@ import {useNotificationStore} from "./notifications/stores/index"
 
 export function ImportExtensions(pinia:Pinia){
     useWebSocketStore(pinia)
+    useWebSocketStore().Init()
     useNotificationStore(pinia)
+    useNotificationStore().Init()
     return pinia
 }
