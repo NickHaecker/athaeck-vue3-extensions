@@ -114,6 +114,7 @@ export default {
 
 .info {
     background: blue;
+    color: white;
 }
 
 .action-border {
