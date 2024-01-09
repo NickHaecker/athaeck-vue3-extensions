@@ -76,6 +76,8 @@ export default {
 .notification {
     box-shadow: 0px 0px 35px -5px rgba(white, .7);
 
+    border-radius: 7px;
+    padding: 7%;
 
 }
 
